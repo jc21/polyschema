@@ -1,3 +1,7 @@
+<p align="center">
+    <img src="https://polyschema.jc21.com/images/favicon/apple-touch-icon.png">
+</p>
+
 # PolySchema
 
 Write each migration once, in YAML or JSON, and apply it to **PostgreSQL, MySQL, MariaDB or SQLite**. You can use it as a Go library (it works with `embed.FS`) or as a standalone command.
