@@ -1,0 +1,26 @@
+operations:
+  - createTable:
+      name: roles
+      ifNotExists: true
+      columns:
+        - { name: id,   type: integer, primaryKey: true }
+        - { name: name, type: string, length: 50, nullable: false, unique: true }
+
+  - createTable:
+      name: users
+      columns:
+        - { name: id,         type: bigint,  primaryKey: true, autoIncrement: true }
+        - { name: email,      type: string,  length: 255, nullable: false }
+        - { name: role_id,    type: integer }
+        - { name: active,     type: boolean, nullable: false, default: true }
+        - { name: balance,    type: decimal, precision: 10, scale: 2, default: 0 }
+        - { name: settings,   type: json }
+        - { name: created_at, type: timestamp, nullable: false, defaultExpr: CURRENT_TIMESTAMP }
+      uniques:
+        - { name: uq_users_email, columns: [email] }
+      indexes:
+        - { name: idx_users_role, columns: [role_id] }
+      foreignKeys:
+        - { name: fk_users_role, columns: [role_id], refTable: roles, refColumns: [id], onDelete: set null }
+      checks:
+        - { name: chk_users_email, expr: "email <> ''" }

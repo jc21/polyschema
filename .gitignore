@@ -1,0 +1,4 @@
+/polyschema
+*.db
+*.out
+test-results

@@ -1,0 +1,19 @@
+# Throwaway databases for the integration tests:
+#   docker compose up -d
+#   POLYSCHEMA_PG_DSN="postgres://postgres:test@localhost:5432/postgres?sslmode=disable" \
+#   POLYSCHEMA_MYSQL_DSN="root:test@tcp(localhost:3306)/test" \
+#   POLYSCHEMA_MARIA_DSN="root:test@tcp(localhost:3307)/test" \
+#   go test ./...
+services:
+  postgres:
+    image: postgres:17
+    environment: { POSTGRES_PASSWORD: test }
+    ports: ["5432:5432"]
+  mysql:
+    image: mysql:8.4
+    environment: { MYSQL_ROOT_PASSWORD: test, MYSQL_DATABASE: test }
+    ports: ["3306:3306"]
+  mariadb:
+    image: mariadb:11
+    environment: { MARIADB_ROOT_PASSWORD: test, MARIADB_DATABASE: test }
+    ports: ["3307:3306"]

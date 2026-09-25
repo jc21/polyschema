@@ -1,0 +1,6 @@
+{
+	"operations": [
+		{ "insert": { "table": "roles", "rows": [ { "id": 1, "name": "admin" }, { "id": 2, "name": "user" } ] } },
+		{ "insert": { "table": "users", "rows": [ { "email": "admin@example.com", "role_id": 1, "settings": { "theme": "dark" } } ] } }
+	]
+}

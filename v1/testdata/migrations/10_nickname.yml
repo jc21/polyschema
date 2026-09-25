@@ -1,0 +1,10 @@
+transaction: true
+operations:
+  - addColumn:    { table: users, column: { name: nickname, type: string, length: 50 } }
+  - renameColumn: { table: users, from: nickname, to: handle }
+  - createIndex:  { table: users, name: idx_users_handle, columns: [handle] }
+  - update:       { table: users, set: { handle: boss }, where: { role_id: 1 } }
+  - delete:       { table: users, where: { active: false } }
+  - sql:
+      postgres: "COMMENT ON TABLE users IS 'app users'"
+      default:  "SELECT 1"
