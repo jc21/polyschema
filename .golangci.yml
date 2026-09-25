@@ -73,6 +73,8 @@ linters:
         # cant limit this arbitrarily
         - name: argument-limit
           disabled: true
+        - name: package-directory-mismatch
+          disabled: true
         # handled by gocyclo
         - name: cognitive-complexity
           disabled: true
