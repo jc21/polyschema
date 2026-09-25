@@ -1,4 +1,4 @@
-/polyschema
+dist
 *.db
 *.out
 test-results
