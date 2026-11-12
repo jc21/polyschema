@@ -4,10 +4,6 @@
 # Path to coverprofile file (output of `go test -coverprofile` command).
 profile: cover.out
 
-# (optional; but recommended to set)
-# When specified reported file paths will not contain local prefix in the output
-local-prefix: "github.com/jc21/polyschema"
-
 # Holds coverage thresholds percentages, values should be in range [0-100]
 threshold:
   # (optional; default 0)
